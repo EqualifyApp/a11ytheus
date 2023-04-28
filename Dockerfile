@@ -9,8 +9,8 @@ RUN apk add --no-cache wget && \
 COPY cmd/prometheus                         /bin/prometheus \
      cmd/promtool                           /bin/promtool \
      a11y/prometheus.yml                    /etc/prometheus/prometheus.yml \
-     console_libraries/                     /usr/share/prometheus/console_libraries/ \
-     consoles/                              /usr/share/prometheus/consoles/
+     console_libraries                      /usr/share/prometheus/console_libraries/ \
+     consoles                               /usr/share/prometheus/consoles/
 
 # Set where the work is...
 WORKDIR /prometheus
