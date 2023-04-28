@@ -6,11 +6,11 @@ RUN apk add --no-cache wget && \
     rm -rf /var/cache/apk/*
 
 # Eat copypasta...
-COPY cmd/prometheus                         /bin/prometheus \
-     cmd/promtool                           /bin/promtool \
-     a11y/prometheus.yml                    /etc/prometheus/prometheus.yml \
-     console_libraries                      /usr/share/prometheus/console_libraries/ \
-     consoles                               /usr/share/prometheus/consoles/
+COPY cmd/prometheus                         /bin/prometheus
+COPY cmd/promtool                           /bin/promtool
+COPY a11y/prometheus.yml                    /etc/prometheus/prometheus.yml
+COPY console_libraries/                     /usr/share/prometheus/console_libraries
+COPY consoles/                              /usr/share/prometheus/consoles/
 
 # Set where the work is...
 WORKDIR /prometheus
